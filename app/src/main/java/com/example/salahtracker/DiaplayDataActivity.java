@@ -1,9 +1,11 @@
 package com.example.salahtracker;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -40,6 +42,14 @@ public class DiaplayDataActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(DiaplayDataActivity.this));
 
     }
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
+    }
+
+
     void storeInArray(){
         Cursor cursor = db.ReadAllData();
 

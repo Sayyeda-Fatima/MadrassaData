@@ -1,5 +1,6 @@
 package com.example.salahtracker;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -41,7 +42,7 @@ public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRVAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyRVAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.id_txt.setText(String.valueOf(ID.get(position)));
         holder.namazName_txt.setText(String.valueOf(namazName.get(position)));
@@ -49,20 +50,20 @@ public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder>
         holder.rakhat_txt.setText(String.valueOf(rakhat.get(position)));
         holder.nafal_txt.setText(String.valueOf(nafal.get(position)));
         holder.jamat_txt.setText(String.valueOf(jamat.get(position)));
-//        holder.single_item_layout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent=new Intent(context,activity_update.class);
-//                intent.putExtra("id", String.valueOf(id.get(position)));
-//                intent.putExtra("rollNo", String.valueOf(rollNo.get(position)));
-//                intent.putExtra("name", String.valueOf(name.get(position)));
-//                intent.putExtra("sabq", String.valueOf(sabq.get(position)));
-//                intent.putExtra("sabqi", String.valueOf(sabqi.get(position)));
-//                intent.putExtra("manzil", String.valueOf(manzil.get(position)));
-//                activity.startActivityForResult(intent,1);
-//
-//            }
-//        });
+        holder.single_item_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,activity_update.class);
+                intent.putExtra("id", String.valueOf(ID.get(position)));
+                intent.putExtra("namazName", String.valueOf(namazName.get(position)));
+                intent.putExtra("date", String.valueOf(date.get(position)));
+                intent.putExtra("rakhat", String.valueOf(rakhat.get(position)));
+                intent.putExtra("jamat", String.valueOf(jamat.get(position)));
+                intent.putExtra("nafal", String.valueOf(nafal.get(position)));
+                activity.startActivityForResult(intent,1);
+
+            }
+        });
 
 
     }

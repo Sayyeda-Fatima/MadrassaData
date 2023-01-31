@@ -73,25 +73,25 @@ public class DBHandler   extends SQLiteOpenHelper {
             }
             return res;
         }
-//        public  boolean updateData(Student student) {
-//            SQLiteDatabase db = this.getWritableDatabase();
-//            ContentValues values = new ContentValues();
-//            values.put(COLUMN_NAME, student.getName());
-//            values.put(COLUMN_ROLLNO, student.getRollNo());
-//            values.put(COLUMN_SABQ, student.getSabq());
-//            values.put(COLUMN_SABQI, student.getSabqi());
-//            values.put(COLUMN_MANZIL, student.getManzil());
-//
-//            long result = db.update(TABLE_NAME, values, "rollNo=?", new String[]{student.getRollNo()});
-//            db.close();
-//
-//            if (result == -1) {
-//
-//                return false;
-//            } else {
-//                return true;
-//            }
-//        }
+        public  boolean updateData(Namaz namaz) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_NAMAZNAME, namaz.namazName);
+//            values.put(COLUMN_DATE, namaz.date);
+            values.put(COLUMN_RAKHAT, namaz.rakhat);
+            values.put(COLUMN_JAMAT, namaz.jamat);
+            values.put(COLUMN_NAFAL,namaz.nafal );
+
+            long result = db.update(TABLE_NAME, values, "namazName=?", new String[]{namaz.namazName});
+            db.close();
+
+            if (result == -1) {
+
+                return false;
+            } else {
+                return true;
+            }
+        }
     ////delete
 //        public  boolean deleteData(String rollNo) {
 //            SQLiteDatabase db = this.getWritableDatabase();
