@@ -12,14 +12,14 @@ public class DBHandler   extends SQLiteOpenHelper {
         private static final String DATABASE_NAME = "Salah.db";
         private static final String TABLE_NAME = "Namaz";
 
-        private static final String COLUMN_ID = "pid";
+        private static final String COLUMN_PID = "pid";
         private static final String COLUMN_NAMAZNAME= "namazName";
 
         private static final String COLUMN_DATE = "date";
         private static final String COLUMN_NOOFRAKHAT = "noOfRakhat";
         private static final String COLUMN_JAMAT = "jamat";
         private static final String COLUMN_NAFAL = "nafal";
-        private static final String COLUMN_TAHAJUD = "tahajud";
+
 
         public DBHandler( Context context) {
             super(context, DATABASE_NAME, null, 1);
@@ -30,14 +30,12 @@ public class DBHandler   extends SQLiteOpenHelper {
         public void onCreate(SQLiteDatabase db) {
 
             String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
-                    + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + COLUMN_PID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_NAMAZNAME + " TEXT,"
                     + COLUMN_DATE + " TEXT,"
                     + COLUMN_NOOFRAKHAT + "INTEGER,"
                     + COLUMN_JAMAT + " TEXT,"
-                    + COLUMN_NAFAL + " INTEGER,"
-                    + COLUMN_TAHAJUD + " TEXT"
-
+                    + COLUMN_NAFAL + " INTEGER"
                     + ")";
             db.execSQL(sql);
 
@@ -59,8 +57,6 @@ public class DBHandler   extends SQLiteOpenHelper {
             values.put(COLUMN_NOOFRAKHAT, namaz.noOfRakhat);
             values.put(COLUMN_JAMAT, namaz.jamat);
             values.put(COLUMN_NAFAL,namaz.nafal );
-            values.put(COLUMN_TAHAJUD,namaz.tahajud);
-
 
             long result= db.insert(TABLE_NAME, null, values);
             db.close();

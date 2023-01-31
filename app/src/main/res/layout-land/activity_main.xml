@@ -11,10 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="227dp"
         android:text="Person 1"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/dateDisplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,11 +33,12 @@
 
     <Spinner
         android:id="@+id/optNamaz"
-        android:layout_width="205dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="200dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/namazNameLabel"
         app:layout_constraintTop_toBottomOf="@+id/txtPersonName"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -47,8 +46,8 @@
         android:id="@+id/chkJamat"
         android:layout_width="100dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="308dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginBottom="96dp"
         android:text="Jamat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -68,8 +67,8 @@
         android:id="@+id/btnAddData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginBottom="308dp"
+        android:layout_marginStart="424dp"
+        android:layout_marginBottom="40dp"
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -78,8 +77,8 @@
         android:id="@+id/btnDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="212dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="40dp"
         android:text="Show Data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -88,7 +87,7 @@
         android:id="@+id/rakatTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="26dp"
         android:text="No Of Rakat :"
         app:layout_constraintEnd_toStartOf="@+id/txtNoOfRakat"
@@ -107,39 +106,16 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNoOfRakat" />
 
     <TextView
-        android:id="@+id/selectSalahLabel"
+        android:id="@+id/namazNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Salah"
+        android:layout_marginStart="188dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="40dp"
+        android:text="Select Namaz"
+        app:layout_constraintBottom_toTopOf="@+id/rakatTitle"
         app:layout_constraintEnd_toStartOf="@+id/optNamaz"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/optNamaz" />
-
-    <TextView
-        android:id="@+id/selectDateLabel"
-        android:layout_width="73dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="47dp"
-        android:text="Select Date"
-        app:layout_constraintEnd_toStartOf="@+id/dateDisplay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dateDisplay" />
-
-    <EditText
-        android:id="@+id/dateDisplay"
-        android:layout_width="236dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="400dp"
-        android:ems="10"
-        android:hint="Select Date"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/selectDateLabel"
-        app:layout_constraintTop_toBottomOf="@+id/txtPersonName" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
