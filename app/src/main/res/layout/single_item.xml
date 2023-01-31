@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:id="@+id/single_item"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="4dp"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="328dp"
+            android:fillViewport="true"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewRakat"
+            app:layout_constraintEnd_toEndOf="@+id/textViewNamazName"
+            app:layout_constraintStart_toEndOf="@+id/textViewNamazName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRakat">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="108dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginBottom="29dp"
+                android:fontFamily="sans-serif-black"
+                android:text="jamat"
+                app:layout_constraintBottom_toTopOf="@+id/TVJamat"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="39dp"
+                android:layout_marginBottom="26dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Nafal"
+                app:layout_constraintBottom_toTopOf="@+id/TVNafal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/TVNamaz" />
+
+            <TextView
+                android:id="@+id/TVnm_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="19dp"
+                android:hint="1"
+                android:textColor="#000"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/TVNamaz"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVNamaz"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="87dp"
+                android:layout_marginBottom="14dp"
+                android:fontFamily="sans-serif-black"
+                android:hint="Namaz"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/TVnm_id"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVNafal"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="136dp"
+                android:hint="Nafal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/TVJamat"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/TVRakat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="41dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="63dp"
+                android:hint="Rakat"
+                app:layout_constraintBottom_toTopOf="@+id/TVDate"
+                app:layout_constraintEnd_toStartOf="@+id/TVJamat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/TVJamat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="59dp"
+                android:hint="Jamat"
+                app:layout_constraintBottom_toTopOf="@+id/TVDate"
+                app:layout_constraintEnd_toStartOf="@+id/TVNafal"
+                app:layout_constraintStart_toEndOf="@+id/TVRakat"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/TVDate"
+                android:layout_width="171dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="47dp"
+                android:fontFamily="sans-serif-black"
+                android:hint="Date"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVJamat" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginEnd="33dp"
+                android:layout_marginBottom="31dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Rakhat"
+                app:layout_constraintBottom_toTopOf="@+id/TVRakat"
+                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVnm_id" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

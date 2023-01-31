@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -118,6 +119,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
    }
         });
+
+
+       showData.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(MainActivity.this, DiaplayDataActivity.class);
+               startActivity(intent);
+           }
+
+       });
+
+
     }
 
     @Override
