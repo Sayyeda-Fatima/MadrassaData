@@ -4,7 +4,7 @@ public class Namaz {
    public int pid;
     public String namazName;
     public  String date;
-    public  int noOfRakhat;
+    public  int rakhat;
     public  String jamat;
     public  int nafal;
 
@@ -12,7 +12,7 @@ public class Namaz {
     public Namaz(String _name, String _date, int _rakhatno, String _jamat, int _nafal) {
         this.namazName=_name;
         this.date=_date;
-        this.noOfRakhat=_rakhatno;
+        this.rakhat=_rakhatno;
         this.jamat=_jamat;
         this.nafal=_nafal;
 

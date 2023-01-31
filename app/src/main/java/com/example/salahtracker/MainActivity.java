@@ -20,7 +20,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-//    DBHandler db;
+    DBHandler db;
     Button add;
     Button showData;
     CheckBox checkJamat;
@@ -92,29 +92,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-
-
-
-
-        //dbbbb
-      //  db=new DBHandler(this);
-        //////NAMAZ OBJECTTTTTTTTT
-
-
-
-
-
-
-
-
-//        if(db.insertNamaz(namaz)==false)
-//        {
-//            Toast.makeText(MainActivity.this, "Data is not Inserted", Toast.LENGTH_SHORT).show();
-//        }
-//        else{
-//            Toast.makeText(MainActivity.this, "Data is Inserted Successfully", Toast.LENGTH_SHORT).show();
-//
-//        }
    //// add Button functionality
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,11 +100,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 int noOfRakat=Integer.parseInt(rakat.getText().toString());
                 int nawafils=Integer.parseInt(nafal.getText().toString());
+                //////NAMAZ OBJECTTTTTTTTT
                 Namaz namaz=new Namaz(salahName,date,noOfRakat,jamat,nawafils);
+
                 Person person=new Person("saba",1);
-//                String temp=Integer.toString(noOfRakat);
-//                Toast.makeText(MainActivity.this,temp, Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivity.this, "testing purpose", Toast.LENGTH_SHORT).show();
+
+                //dbbbb
+                db=new DBHandler(MainActivity.this);
+                if(db.insertNamaz(namaz)==false)
+                {
+                    Toast.makeText(MainActivity.this, "Data is not Inserted", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "Data is Inserted Successfully", Toast.LENGTH_SHORT).show();
+
+                }
 
    }
         });

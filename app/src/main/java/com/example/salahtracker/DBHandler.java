@@ -16,7 +16,7 @@ public class DBHandler   extends SQLiteOpenHelper {
         private static final String COLUMN_NAMAZNAME= "namazName";
 
         private static final String COLUMN_DATE = "date";
-        private static final String COLUMN_NOOFRAKHAT = "noOfRakhat";
+        private static final String COLUMN_RAKHAT = "rakhat";
         private static final String COLUMN_JAMAT = "jamat";
         private static final String COLUMN_NAFAL = "nafal";
 
@@ -33,7 +33,7 @@ public class DBHandler   extends SQLiteOpenHelper {
                     + COLUMN_PID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_NAMAZNAME + " TEXT,"
                     + COLUMN_DATE + " TEXT,"
-                    + COLUMN_NOOFRAKHAT + "INTEGER,"
+                    + COLUMN_RAKHAT + " INTEGER,"
                     + COLUMN_JAMAT + " TEXT,"
                     + COLUMN_NAFAL + " INTEGER"
                     + ")";
@@ -54,7 +54,7 @@ public class DBHandler   extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             values.put(COLUMN_NAMAZNAME, namaz.namazName);
             values.put(COLUMN_DATE, namaz.date);
-            values.put(COLUMN_NOOFRAKHAT, namaz.noOfRakhat);
+            values.put(COLUMN_RAKHAT, namaz.rakhat);
             values.put(COLUMN_JAMAT, namaz.jamat);
             values.put(COLUMN_NAFAL,namaz.nafal );
 
