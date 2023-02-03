@@ -41,6 +41,7 @@ public class activity_update extends AppCompatActivity {
                 date1= tvDate.getText().toString().trim();
                 int  rakatInteger=Integer.parseInt(rakhat1);
                 int nafalInteger=Integer.parseInt(nafal1);
+
                 Namaz namaz=new Namaz(namazName1,date1,rakatInteger,jamat1,nafalInteger);
                 if(db.updateData(namaz)==false)
                 {
@@ -54,31 +55,31 @@ public class activity_update extends AppCompatActivity {
 
             }
         });
-//        deleteBtn.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//                db = new DBHandler(activity_update.this);
-//
-//                rollNo = ETrollNo.getText().toString().trim();
-//
-//                if( db.deleteData(rollNo)==false)
-//                {
-//
-//                    Toast.makeText(activity_update.this, "Not deleted", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                    Toast.makeText(activity_update.this,"deleted successfully", Toast.LENGTH_SHORT).show();
-//
-//                }
-//            }
-//        });
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                db = new DBHandler(activity_update.this);
+
+                namazName1 = etnamazName.getText().toString().trim();
+
+                if( db.deleteData(namazName1)==false)
+                {
+
+                    Toast.makeText(activity_update.this, "Not deleted", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(activity_update.this,"deleted successfully", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
     }
 
 
 
     void getAndSetIntentData(){
-        if(getIntent().hasExtra("pid") && getIntent().hasExtra("namazName") &&
+        if(getIntent().hasExtra("id") && getIntent().hasExtra("namazName") &&
                 getIntent().hasExtra("date") && getIntent().hasExtra("rakhat") && getIntent().hasExtra("jamat")
                 && getIntent().hasExtra("nafal")){
             //Getting Data from Intent
@@ -88,13 +89,14 @@ public class activity_update extends AppCompatActivity {
             rakhat1 = getIntent().getStringExtra("rakhat");
             jamat1=getIntent().getStringExtra("jamat");
             nafal1=getIntent().getStringExtra("nafal");
+            Toast.makeText(activity_update.this,  namazName1, Toast.LENGTH_SHORT).show();
 
             //Setting Intent Data
             etjamat.setText(jamat1);
             etnamazName.setText(namazName1);
             etrakhat.setText(rakhat1);
             etnafal.setText(nafal1);
-
+            tvDate.setText(date1);
             //Log.d("stev", title+" "+author+" "+pages);
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();

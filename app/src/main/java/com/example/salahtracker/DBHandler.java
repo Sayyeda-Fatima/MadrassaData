@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class DBHandler   extends SQLiteOpenHelper {
 
@@ -60,8 +61,10 @@ public class DBHandler   extends SQLiteOpenHelper {
 
             long result= db.insert(TABLE_NAME, null, values);
             db.close();
-            if(result == -1)
-                return false;
+            if(result == -1){
+                //Toast.makeText(this.context,  namaz.date, Toast.LENGTH_SHORT).show();
+
+                return false;}
             else
                 return true;
         }
@@ -93,16 +96,16 @@ public class DBHandler   extends SQLiteOpenHelper {
             }
         }
     ////delete
-//        public  boolean deleteData(String rollNo) {
-//            SQLiteDatabase db = this.getWritableDatabase();
-//            long result =db.delete(TABLE_NAME, COLUMN_ROLLNO + " = ?", new String[] {rollNo});
-//            db.close();
-//            if (result == -1) {
-//
-//                return false;
-//            } else {
-//                return true;
-//            }
-//        }
+        public  boolean deleteData(String rollNo) {
+            SQLiteDatabase db = this.getWritableDatabase();
+            long result =db.delete(TABLE_NAME, COLUMN_NAMAZNAME + " = ?", new String[] {rollNo});
+            db.close();
+            if (result == -1) {
+
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
 

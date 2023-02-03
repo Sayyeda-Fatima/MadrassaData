@@ -103,11 +103,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 int nawafils=Integer.parseInt(nafal.getText().toString());
                 //////NAMAZ OBJECTTTTTTTTT
                 Namaz namaz=new Namaz(salahName,date,noOfRakat,jamat,nawafils);
+               // Namaz namaz1= new Namaz("fajar", "12/2/23", 2,"yes", 4);
 
                 Person person=new Person("saba",1);
 
                 //dbbbb
                 db=new DBHandler(MainActivity.this);
+
                 if(db.insertNamaz(namaz)==false)
                 {
                     Toast.makeText(MainActivity.this, "Data is not Inserted", Toast.LENGTH_SHORT).show();
