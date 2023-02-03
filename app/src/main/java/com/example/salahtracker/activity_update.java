@@ -19,8 +19,6 @@ public class activity_update extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
-
-
         deleteBtn=findViewById(R.id.btnDelete);
         updateBtn=findViewById(R.id.btnUpdate);
         etnamazName=findViewById(R.id.etnamaz);
@@ -73,8 +71,6 @@ public class activity_update extends AppCompatActivity {
             }
         });
     }
-
-
 
     void getAndSetIntentData(){
         if(getIntent().hasExtra("id") && getIntent().hasExtra("namazName") &&
