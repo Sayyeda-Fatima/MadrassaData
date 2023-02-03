@@ -65,12 +65,10 @@ public class activity_update extends AppCompatActivity {
 
                 if( db.deleteData(namazName1)==false)
                 {
-
                     Toast.makeText(activity_update.this, "Not deleted", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(activity_update.this,"deleted successfully", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
@@ -91,7 +89,6 @@ public class activity_update extends AppCompatActivity {
             nafal1=getIntent().getStringExtra("nafal");
            // Toast.makeText(activity_update.this,  namazName1, Toast.LENGTH_SHORT).show();
             //Setting Intent Data
-
             etjamat.setText(jamat1);
             etnamazName.setText(namazName1);
             etrakhat.setText(rakhat1);
