@@ -89,7 +89,7 @@ public class activity_update extends AppCompatActivity {
             rakhat1 = getIntent().getStringExtra("rakhat");
             jamat1=getIntent().getStringExtra("jamat");
             nafal1=getIntent().getStringExtra("nafal");
-            Toast.makeText(activity_update.this,  namazName1, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(activity_update.this,  namazName1, Toast.LENGTH_SHORT).show();
 
             //Setting Intent Data
 
