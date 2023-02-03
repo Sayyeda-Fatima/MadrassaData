@@ -92,6 +92,7 @@ public class activity_update extends AppCompatActivity {
             Toast.makeText(activity_update.this,  namazName1, Toast.LENGTH_SHORT).show();
 
             //Setting Intent Data
+
             etjamat.setText(jamat1);
             etnamazName.setText(namazName1);
             etrakhat.setText(rakhat1);
