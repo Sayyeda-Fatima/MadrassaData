@@ -58,7 +58,6 @@ public class DBHandler   extends SQLiteOpenHelper {
             values.put(COLUMN_RAKHAT, namaz.rakhat);
             values.put(COLUMN_JAMAT, namaz.jamat);
             values.put(COLUMN_NAFAL,namaz.nafal );
-
             long result= db.insert(TABLE_NAME, null, values);
             db.close();
             if(result == -1){
