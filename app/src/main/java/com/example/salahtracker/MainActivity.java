@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     DBHandler db;
     Button add;
+    Button gitbutton;
     Button showData;
     CheckBox checkJamat;
     EditText rakat;
@@ -53,7 +55,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         final int year = calandar.get(Calendar.YEAR);
         final int month = calandar.get(Calendar.MONTH);
         final int day = calandar.get(Calendar.DAY_OF_MONTH);
-
+        gitbutton=findViewById(R.id.gitButton);
+        gitbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url="https://github.com/SabaInam7/Group1-TrackerSalah.git";
+                Intent intent= new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
         select_date.setOnClickListener(new View.OnClickListener() {
 //            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
