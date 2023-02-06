@@ -8,14 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class DiaplayDataActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    ArrayList<String> ID,namazName, date, rakhat, jamat, nafal;
+    ArrayList<String> ID, studentName, date, sabaq, sabki, manzil;
     DBHandler db;
     MyRVAdapter RvAdapter;
 
@@ -29,15 +28,14 @@ public class DiaplayDataActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         db = new DBHandler(this);
         ID= new ArrayList<>();
-        namazName= new ArrayList<>();
-        date = new ArrayList<>();
-        rakhat= new ArrayList<>();
-        jamat = new ArrayList<>();
-        nafal = new ArrayList<>();
+        studentName = new ArrayList<>();
+        sabaq = new ArrayList<>();
+        sabki = new ArrayList<>();
+        manzil = new ArrayList<>();
 
 
         storeInArray();
-        RvAdapter= new MyRVAdapter(DiaplayDataActivity.this,this,ID,namazName, date, rakhat, jamat, nafal);
+        RvAdapter= new MyRVAdapter(DiaplayDataActivity.this,this,ID, studentName, sabaq, sabki, manzil);
         recyclerView.setAdapter(RvAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(DiaplayDataActivity.this));
 
@@ -59,11 +57,10 @@ public class DiaplayDataActivity extends AppCompatActivity {
             while (cursor.moveToNext()){
                 //Log.d();
                 ID.add(cursor.getString(0));
-                namazName.add(cursor.getString(1));
-                date.add(cursor.getString(2));
-                rakhat.add(cursor.getString(3));
-                jamat.add(cursor.getString(4));
-                nafal.add(cursor.getString(5));
+                studentName.add(cursor.getString(1));
+                sabaq.add(cursor.getString(2));
+                sabki.add(cursor.getString(3));
+                manzil.add(cursor.getString(4));
             }
 
         }

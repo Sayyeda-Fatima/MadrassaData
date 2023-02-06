@@ -18,19 +18,18 @@ import java.util.ArrayList;
 
 public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList ID,namazName, date, rakhat, jamat, nafal;
+    private ArrayList ID, studentname, sabaq, sabqi, manzil;
     Activity activity;
 
-    MyRVAdapter(Activity activity,Context context, ArrayList _ID, ArrayList _namazName,ArrayList _date,  ArrayList _rakhat,ArrayList _jamat,ArrayList _nafal){
+    MyRVAdapter(Activity activity,Context context, ArrayList _ID, ArrayList student,  ArrayList sabak,ArrayList sabki,ArrayList manzil){
         this.activity=activity;
         this.context = context;
         //Setting values
         this.ID = _ID;
-        this.namazName=_namazName;
-        this.date=_date;
-        this.rakhat=_rakhat;
-        this.jamat=_jamat;
-        this.nafal=_nafal;
+        this.studentname =student;
+        this.sabaq =sabak;
+        this.sabqi =sabki;
+        this.manzil =manzil;
     }
 
     @NonNull
@@ -45,21 +44,19 @@ public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder>
     public void onBindViewHolder(@NonNull MyRVAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.id_txt.setText(String.valueOf(ID.get(position)));
-        holder.namazName_txt.setText(String.valueOf(namazName.get(position)));
-        holder.date_txt.setText(String.valueOf(date.get(position)));
-        holder.rakhat_txt.setText(String.valueOf(rakhat.get(position)));
-        holder.nafal_txt.setText(String.valueOf(nafal.get(position)));
-        holder.jamat_txt.setText(String.valueOf(jamat.get(position)));
+        holder.studentName_txt.setText(String.valueOf(studentname.get(position)));
+        holder.sabaq_txt.setText(String.valueOf(sabaq.get(position)));
+        holder.manzil_txt.setText(String.valueOf(manzil.get(position)));
+        holder.sabqi_txt.setText(String.valueOf(sabqi.get(position)));
         holder.single_item_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,activity_update.class);
                 intent.putExtra("id", String.valueOf(ID.get(position)));
-                intent.putExtra("namazName", String.valueOf(namazName.get(position)));
-                intent.putExtra("date", String.valueOf(date.get(position)));
-                intent.putExtra("rakhat", String.valueOf(rakhat.get(position)));
-                intent.putExtra("jamat", String.valueOf(jamat.get(position)));
-                intent.putExtra("nafal", String.valueOf(nafal.get(position)));
+                intent.putExtra("studentName", String.valueOf(studentname.get(position)));
+                intent.putExtra("sabaq", String.valueOf(sabaq.get(position)));
+                intent.putExtra("sabqi", String.valueOf(sabqi.get(position)));
+                intent.putExtra("manzil", String.valueOf(manzil.get(position)));
                 activity.startActivityForResult(intent,1);
 
             }
@@ -75,17 +72,16 @@ public class MyRVAdapter  extends RecyclerView.Adapter<MyRVAdapter.MyViewHolder>
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView id_txt, namazName_txt, date_txt, rakhat_txt, jamat_txt, nafal_txt;
+        TextView id_txt, studentName_txt, sabaq_txt, sabqi_txt, manzil_txt;
         LinearLayout single_item_layout;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             id_txt=itemView.findViewById(R.id.TVnm_id);
-            namazName_txt=itemView.findViewById(R.id.TVNamaz);
-            date_txt= itemView.findViewById(R.id.TVDate);
-            rakhat_txt= itemView.findViewById(R.id.TVRakat);
-            jamat_txt= itemView.findViewById(R.id.TVJamat);
-            nafal_txt= itemView.findViewById(R.id.TVNafal);
+            studentName_txt =itemView.findViewById(R.id.TVStudent);
+            sabaq_txt = itemView.findViewById(R.id.TVSabaq);
+            sabqi_txt = itemView.findViewById(R.id.TVSabqi);
+            manzil_txt = itemView.findViewById(R.id.TVManzil);
             single_item_layout=itemView.findViewById(R.id.single_item);
         }
     }

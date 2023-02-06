@@ -4,22 +4,23 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 public class DBHandler   extends SQLiteOpenHelper {
 
         private Context context;
 
         private static final String DATABASE_NAME = "Salah.db";
-        private static final String TABLE_NAME = "Namaz";
+        private static final String TABLE_NAME = "StudentData";
 
         private static final String COLUMN_PID = "pid";
-        private static final String COLUMN_NAMAZNAME= "namazName";
+        private static final String COLUMN_STUDENT = "studentName";
 
-        private static final String COLUMN_DATE = "date";
-        private static final String COLUMN_RAKHAT = "rakhat";
-        private static final String COLUMN_JAMAT = "jamat";
-        private static final String COLUMN_NAFAL = "nafal";
+        private static final String COLUMN_SABAQ = "sabaq";
+        private static final String COLUMN_SABKI = "sabki";
+        private static final String COLUMN_MANZIL = "manzil";
+//        private static final String COLUMN_NAFAL = "nafal";
+//
+
 
 
         public DBHandler( Context context) {
@@ -32,11 +33,10 @@ public class DBHandler   extends SQLiteOpenHelper {
 
             String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
                     + COLUMN_PID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                    + COLUMN_NAMAZNAME + " TEXT,"
-                    + COLUMN_DATE + " TEXT,"
-                    + COLUMN_RAKHAT + " INTEGER,"
-                    + COLUMN_JAMAT + " TEXT,"
-                    + COLUMN_NAFAL + " INTEGER"
+                    + COLUMN_STUDENT + " TEXT,"
+                    + COLUMN_SABAQ + " INTEGER,"
+                    + COLUMN_SABKI + " INTEGER,"
+                    + COLUMN_MANZIL + " INTEGER"
                     + ")";
             db.execSQL(sql);
 
@@ -53,11 +53,10 @@ public class DBHandler   extends SQLiteOpenHelper {
         public  boolean insertNamaz(Namaz namaz) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put(COLUMN_NAMAZNAME, namaz.namazName);
-            values.put(COLUMN_DATE, namaz.date);
-            values.put(COLUMN_RAKHAT, namaz.rakhat);
-            values.put(COLUMN_JAMAT, namaz.jamat);
-            values.put(COLUMN_NAFAL,namaz.nafal );
+            values.put(COLUMN_STUDENT, namaz.studentName);
+            values.put(COLUMN_SABAQ, namaz.sabaq);
+            values.put(COLUMN_SABKI, namaz.sabqi);
+            values.put(COLUMN_MANZIL, namaz.manzil);
             long result= db.insert(TABLE_NAME, null, values);
             db.close();
             if(result == -1){
@@ -78,13 +77,12 @@ public class DBHandler   extends SQLiteOpenHelper {
         public  boolean updateData(Namaz namaz) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put(COLUMN_NAMAZNAME, namaz.namazName);
+            values.put(COLUMN_SABAQ, namaz.sabaq);
 //            values.put(COLUMN_DATE, namaz.date);
-            values.put(COLUMN_RAKHAT, namaz.rakhat);
-            values.put(COLUMN_JAMAT, namaz.jamat);
-            values.put(COLUMN_NAFAL,namaz.nafal );
+            values.put(COLUMN_SABKI, namaz.sabqi);
+            values.put(COLUMN_MANZIL, namaz.manzil);
 
-            long result = db.update(TABLE_NAME, values, "namazName=?", new String[]{namaz.namazName});
+            long result = db.update(TABLE_NAME, values, "studentName=?", new String[]{namaz.studentName});
             db.close();
 
             if (result == -1) {
@@ -97,7 +95,7 @@ public class DBHandler   extends SQLiteOpenHelper {
     ////delete
         public  boolean deleteData(String rollNo) {
             SQLiteDatabase db = this.getWritableDatabase();
-            long result =db.delete(TABLE_NAME, COLUMN_NAMAZNAME + " = ?", new String[] {rollNo});
+            long result =db.delete(TABLE_NAME, COLUMN_STUDENT + " = ?", new String[] {rollNo});
             db.close();
             if (result == -1) {
 

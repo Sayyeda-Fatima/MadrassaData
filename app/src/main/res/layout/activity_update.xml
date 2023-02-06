@@ -7,58 +7,58 @@
     tools:context=".activity_update">
 
     <EditText
-        android:id="@+id/etnamaz"
+        android:id="@+id/etstudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="82dp"
         android:layout_marginBottom="30dp"
         android:ems="10"
-        android:hint="Namaz"
+        android:hint="Student"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/etRakat"
+        app:layout_constraintBottom_toTopOf="@+id/etsabaq"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/etRakat"
+        android:id="@+id/etsabaq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="33dp"
         android:ems="10"
-        android:hint="Rakat"
+        android:hint="Sabaq"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/etJamat"
-        app:layout_constraintStart_toStartOf="@+id/etnamaz"
-        app:layout_constraintTop_toBottomOf="@+id/etnamaz" />
+        app:layout_constraintBottom_toTopOf="@+id/etsabki"
+        app:layout_constraintStart_toStartOf="@+id/etstudent"
+        app:layout_constraintTop_toBottomOf="@+id/etstudent" />
 
     <EditText
-        android:id="@+id/etJamat"
+        android:id="@+id/etsabki"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="27dp"
         android:ems="10"
-        android:hint="Jamat"
+        android:hint="Sabqi"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/etnafal"
-        app:layout_constraintStart_toStartOf="@+id/etRakat"
-        app:layout_constraintTop_toBottomOf="@+id/etRakat" />
+        app:layout_constraintBottom_toTopOf="@+id/etmanzil"
+        app:layout_constraintStart_toStartOf="@+id/etsabaq"
+        app:layout_constraintTop_toBottomOf="@+id/etsabaq" />
 
     <EditText
-        android:id="@+id/etnafal"
+        android:id="@+id/etmanzil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="51dp"
         android:ems="10"
-        android:hint="Nawafil"
+        android:hint="Manzil"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
-        app:layout_constraintStart_toStartOf="@+id/etJamat"
-        app:layout_constraintTop_toBottomOf="@+id/etJamat" />
+        app:layout_constraintStart_toStartOf="@+id/etsabki"
+        app:layout_constraintTop_toBottomOf="@+id/etsabki" />
 
     <Button
         android:id="@+id/btnUpdate"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etnafal"
+        app:layout_constraintTop_toBottomOf="@+id/etmanzil"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
@@ -85,11 +85,4 @@
         app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Date"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="27dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

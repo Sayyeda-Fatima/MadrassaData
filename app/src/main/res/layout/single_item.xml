@@ -34,9 +34,9 @@
                 android:layout_marginEnd="31dp"
                 android:layout_marginBottom="25dp"
                 android:fontFamily="sans-serif-black"
-                android:text="jamat:"
+                android:text="Sabqi"
                 app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintEnd_toStartOf="@+id/TVJamat"
+                app:layout_constraintEnd_toStartOf="@+id/TVSabqi"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -48,10 +48,10 @@
                 android:layout_marginEnd="29dp"
                 android:layout_marginBottom="46dp"
                 android:fontFamily="sans-serif-black"
-                android:text="Nafal:"
+                android:text="Manizil:"
                 android:textSize="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/TVNafal"
+                app:layout_constraintEnd_toStartOf="@+id/TVManzil"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -65,76 +65,62 @@
                 android:textColor="#000"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                app:layout_constraintBaseline_toBaselineOf="@+id/TVNamaz"
-                app:layout_constraintEnd_toStartOf="@+id/TVNamaz"
+                app:layout_constraintBaseline_toBaselineOf="@+id/TVStudent"
+                app:layout_constraintEnd_toStartOf="@+id/TVStudent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/TVNamaz"
+                android:id="@+id/TVStudent"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="66dp"
-                android:layout_marginEnd="23dp"
                 android:layout_marginBottom="18dp"
                 android:fontFamily="sans-serif-black"
-                android:hint="Namaz"
+                android:hint="Student"
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
-                app:layout_constraintEnd_toStartOf="@+id/TVDate"
+                app:layout_constraintEnd_toEndOf="@+id/TVSabaq"
                 app:layout_constraintStart_toEndOf="@+id/TVnm_id"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/TVNafal"
+                android:id="@+id/TVManzil"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="165dp"
                 android:layout_marginBottom="46dp"
-                android:hint="Nafal"
+                android:hint="Manzil"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/TVJamat" />
+                app:layout_constraintTop_toBottomOf="@+id/TVSabqi" />
 
             <TextView
-                android:id="@+id/TVRakat"
+                android:id="@+id/TVSabaq"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="164dp"
                 android:layout_marginBottom="23dp"
-                android:hint="Rakat"
-                app:layout_constraintBottom_toTopOf="@+id/TVJamat"
+                android:hint="Sabaq"
+                app:layout_constraintBottom_toTopOf="@+id/TVSabqi"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/TVDate" />
+                app:layout_constraintTop_toBottomOf="@+id/TVStudent" />
 
             <TextView
-                android:id="@+id/TVJamat"
+                android:id="@+id/TVSabqi"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="168dp"
                 android:layout_marginBottom="26dp"
-                android:hint="Jamat"
-                app:layout_constraintBottom_toTopOf="@+id/TVNafal"
+                android:hint="Sabqi"
+                app:layout_constraintBottom_toTopOf="@+id/TVManzil"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toBottomOf="@+id/TVRakat" />
-
-            <TextView
-                android:id="@+id/TVDate"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginEnd="56dp"
-                android:layout_marginBottom="27dp"
-                android:fontFamily="sans-serif-black"
-                android:hint="Date"
-                app:layout_constraintBottom_toTopOf="@+id/TVRakat"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/TVNamaz"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/TVSabaq" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -144,11 +130,11 @@
                 android:layout_marginEnd="23dp"
                 android:layout_marginBottom="21dp"
                 android:fontFamily="sans-serif-black"
-                android:text="Rakhat:"
+                android:text="Sabaq"
                 app:layout_constraintBottom_toTopOf="@+id/textView3"
-                app:layout_constraintEnd_toStartOf="@+id/TVRakat"
+                app:layout_constraintEnd_toStartOf="@+id/TVSabaq"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TVNamaz" />
+                app:layout_constraintTop_toBottomOf="@+id/TVStudent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
