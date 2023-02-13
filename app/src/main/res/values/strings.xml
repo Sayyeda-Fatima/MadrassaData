@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SalahTracker</string>
+    <string name="app_name">Madrassa Data</string>
     <string-array name="SalahName">
         <item>Fajer</item>
         <item>Zohar</item>
