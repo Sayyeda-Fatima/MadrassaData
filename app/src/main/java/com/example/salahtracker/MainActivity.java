@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         gitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url="https://github.com/SabaInam7/Group1-TrackerSalah.git";//change name later-------
+                String url="https://github.com/Sayyeda-Fatima/MadrassaData.git";//change name later-------
                 Intent intent= new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
